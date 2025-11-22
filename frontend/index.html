@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KazeNoTayori | 風の便り</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Shippori+Mincho&display=swap" rel="stylesheet">
+    
+    <!-- ⭐ NEW: Leaflet Map CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <!-- ⭐ NEW: Leaflet Map JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header / Toggle -->
+        <header>
+            <div class="logo">
+                <h1>風の便り</h1>
+                <span class="subtitle">KazeNoTayori</span>
+            </div>
+            <button id="lang-toggle" class="lang-btn">English</button>
+        </header>
+
+        <main>
+            <!-- Greeting -->
+            <div id="greeting-area" class="fade-in">
+                <h2 id="main-title">今日はどこへ行きますか？</h2>
+                <p id="sub-title">天気と気分に合わせて提案します。</p>
+            </div>
+
+            <!-- Input Area -->
+            <div class="input-card">
+                <div class="controls">
+                    <button id="geo-btn" class="icon-btn" title="現在地を使用">📍</button>
+                    <span id="location-status">位置情報: オフ</span>
+                </div>
+                
+                <textarea id="user-input" rows="3" placeholder="ここに入力またはマイクを押して話す..."></textarea>
+                
+                <div class="action-bar">
+                    <button id="record-btn" class="record-btn">
+                        <span class="icon">🎙️</span> <span id="rec-text">録音開始</span>
+                    </button>
+                    <button id="send-btn" class="send-btn">送信</button>
+                </div>
+            </div>
+
+            <!-- Result Area -->
+            <div id="result-area" class="hidden">
+                <div class="weather-badge">
+                    <span id="weather-display">--°C</span>
+                </div>
+                <div class="ai-response">
+                    <p id="ai-text"></p>
+                </div>
+                <div class="playback-controls">
+                    <button id="play-btn" class="icon-btn">🔊 Play</button>
+                </div>
+                
+                <!-- ⭐ NEW: Map Container -->
+                <div id="map-container">
+                    <div id="map"></div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
