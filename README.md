@@ -88,8 +88,3 @@ graph TD
   UI -->|update map| Map
   UI -->|speak result| TTS
   TTS --> User
-
-
-
-
-本プロジェクトをご覧いただきありがとうございます。技術と日常をつなぐこのアプリケーションの開発を楽しみました。
