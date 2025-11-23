@@ -3,14 +3,8 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 
-app.use(cors({
-  origin: [
-    'https://kazenotayori.vercel.app', 
-    'http://127.0.0.1:5500',           
-    'http://localhost:5500'            
-  ],
-  methods: ['GET','POST']
-}));
+// Allow connections (We can allow all now since it's same-origin)
+app.use(cors());
 app.use(express.json());
 
 app.get('/', (_, res) => res.send('Backend OK'));
@@ -46,8 +40,7 @@ async function getWeather({ city, lat, lon, lang }) {
       name: data.name || city || '',
       description: data.weather?.[0]?.description || '',
       temp: data.main?.temp ?? null,
-      // ⭐ NEW: Sending Coordinates for the Map
-      coord: data.coord // { lat: ..., lon: ... }
+      coord: data.coord
     };
 
   } catch (e) {
@@ -76,8 +69,7 @@ app.post('/api/suggest', async (req, res) => {
       if (weather) userContent += `現在の天気(${weather.name}): ${weather.description}, 気温 ${weather.temp}°C\n`;
     }
 
-    // Use Groq (or OpenAI if you switched back)
-    const key = process.env.OPENAI_API_KEY; // Using Groq Key stored here
+    const key = process.env.OPENAI_API_KEY;
     const body = {
       model: 'llama-3.3-70b-versatile',
       messages: [
@@ -110,5 +102,5 @@ app.post('/api/suggest', async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+// ⭐ VERCEL EXPORT (This is the Magic Line)
+module.exports = app;

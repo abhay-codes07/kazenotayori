@@ -1,5 +1,5 @@
 // --- Configuration ---
-const BACKEND_URL = "https://kazenotayori.onrender.com/api/suggest";
+const BACKEND_URL = "/api/suggest";
 
 // --- State ---
 let currentLang = 'ja';
