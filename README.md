@@ -60,20 +60,20 @@ graph TD
 
   subgraph Frontend [Client Side - HTML/JS]
     UI[Glassmorphism UI]
-    STT["Web Speech API\n(Voice → Text)"]
-    TTS["Speech Synthesis\n(Text → Voice)"]
+    STT["Web Speech API\nVoice → Text"]
+    TTS["Speech Synthesis\nText → Voice"]
     Map[Leaflet Map]
   end
 
   subgraph Backend [Node.js / Express]
     Server[API Route Handler]
-    Logic["Prompt Engineering\n& Business Logic"]
-    Whisper[Whisper / Server STT]
+    Logic["Prompt Engineering & Business Logic"]
+    Whisper[Whisper STT]
   end
 
   subgraph External_APIs [Cloud Services]
     OWM[OpenWeatherMap API]
-    LLM[LLM (gpt-3.5 / Grok / Llama-3)]
+    LLM["LLM - gpt-3.5 · Grok · Llama-3"]
   end
 
   User -->|speaks| STT
@@ -88,6 +88,7 @@ graph TD
   UI -->|update map| Map
   UI -->|speak result| TTS
   TTS --> User
+
 
 
 🛠️ Tech Stack (技術スタック)
