@@ -1,24 +1,60 @@
-🍃 KazeNoTayori | 風の便り
-AI-Powered Weather & Fashion Advisor (AI 天気・ファッションアドバイザー)
-"Bringing the wisdom of the wind to your daily choices."
-「風が運ぶ情報で、あなたの日常を彩る。」
+<div align="center">
 
-📖 Overview (概要)
-KazeNoTayori (literally "News from the Wind") is a bilingual, voice-activated web application designed to help users plan their day. It combines real-time weather data with Generative AI to offer personalized activity and outfit recommendations suggestions based on current mood.
-Unlike standard weather apps that just show numbers, KazeNoTayori acts as a Japanese Concierge, offering polite, context-aware advice based on the user's mood and location.
-Key Objective: To demonstrate rapid prototyping of Generative AI, Voice UI, and Geolocation APIs within a modern, responsive web interface.
+# 🍃 KazeNoTayori | 風の便り  
+### **AI-Powered Weather & Fashion Advisor (AI 天気・ファッションアドバイザー)**  
+**"Bringing the wisdom of the wind to your daily choices."**  
+**「風が運ぶ情報で、あなたの日常を彩る。」**
 
-✨ Key Features (主な機能)
-🎙️ Voice-First Interface (音声入力): Seamless Japanese and English speech recognition using the Web Speech API.
-🧠 Generative AI Logic: Uses Llama-3-70b (via Groq) for ultra-fast, context-aware reasoning to generate unique fashion and travel plans.
-🌤️ Real-time Weather: Fetches live temperature and conditions via OpenWeatherMap.
-🗺️ Visual Context: Dynamic map integration using Leaflet.js to visualize the target location.
-📍 Geolocation: One-click detection of the user's current city.
-🎨 Glassmorphism UI: A modern, aesthetic interface optimized for both Desktop and Mobile devices.
-🗣️ Text-to-Speech (読み上げ): The AI reads the advice aloud in a natural voice.
+---
 
-🏗️ Architecture (アーキテクチャ)
-The application follows a clean Client-Server architecture. It separates the frontend (UI/Voice) from the backend (API/Logic) to ensure security of API keys and modularity.
+## 🚩 Badges
+
+![Status](https://img.shields.io/badge/Status-Active-brightgreen)
+![Frontend](https://img.shields.io/badge/Frontend-HTML%2FJS-blue)
+![Backend](https://img.shields.io/badge/Backend-Node.js-green)
+![AI](https://img.shields.io/badge/AI-Llama--3%2070B-purple)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+![Made with Love](https://img.shields.io/badge/Made%20with-❤️-ff69b4)
+
+</div>
+
+---
+
+## 📖 Overview (概要)
+
+**KazeNoTayori** (*“News from the Wind”*) is a **bilingual Japanese–English AI-powered weather concierge**.  
+It combines:
+
+- 🔹 **Real-time weather**
+- 🔹 **Generative AI reasoning**
+- 🔹 **Voice input + TTS**
+- 🔹 **Dynamic maps**
+- 🔹 **Mood-based suggestions**
+
+…to create a **personalized, polite Japanese-style assistant**.
+
+Unlike normal weather apps, it behaves like a **Concierge**:
+> “Based on today's weather in Kyoto and your mood, I recommend…”
+
+---
+
+## ✨ Key Features (主な機能)
+
+| Feature | Description |
+|--------|-------------|
+| 🎙️ **Voice-First Interface** | Japanese + English STT (Web Speech API) |
+| 🧠 **Generative AI Reasoning** | Llama-3-70B (Groq) / GPT-4o |
+| 🌤️ **Live Weather** | OpenWeatherMap Integration |
+| 🗺️ **Visual Map** | Leaflet + OpenStreetMap |
+| 📍 **Geolocation** | Auto-detect user's city |
+| 🎨 **Glassmorphism UI** | Clean, modern design |
+| 🔊 **Text-to-Speech** | Natural spoken output |
+
+---
+
+## 🏗️ Architecture (アーキテクチャ)
+
+```mermaid
 graph TD
   User((User / ユーザー))
 
@@ -32,7 +68,6 @@ graph TD
   subgraph Backend [Node.js / Express]
     Server[API Route Handler]
     Logic[Prompt Engineering\n& Business Logic]
-    # Optional server-side STT
     Whisper[Whisper / Server STT]
   end
 
@@ -41,7 +76,6 @@ graph TD
     LLM[LLM (gpt-3.5 / Grok / Llama-3)]
   end
 
-  %% main flows
   User -->|speaks| STT
   STT --> UI
   UI -->|POST /api/generate| Server
@@ -54,11 +88,6 @@ graph TD
   UI -->|update map| Map
   UI -->|speak result| TTS
   TTS --> User
-
-  %% optional: server-side STT flow (uncomment if used)
-  %% User -->|upload audio| Server
-  %% Server -->|transcribe| Whisper
-  %% Whisper -->|transcript| Logic
 
 🛠️ Tech Stack (技術スタック)
 Frontend: HTML5, CSS3 (CSS Variables, Flexbox, Glassmorphism), Vanilla JavaScript (ES6+).
