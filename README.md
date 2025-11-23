@@ -60,14 +60,14 @@ graph TD
 
   subgraph Frontend [Client Side - HTML/JS]
     UI[Glassmorphism UI]
-    STT[Web Speech API<br/>(Voice → Text)]
-    TTS[Speech Synthesis<br/>(Text → Voice)]
+    STT["Web Speech API\n(Voice → Text)"]
+    TTS["Speech Synthesis\n(Text → Voice)"]
     Map[Leaflet Map]
   end
 
   subgraph Backend [Node.js / Express]
     Server[API Route Handler]
-    Logic[Prompt Engineering\n& Business Logic]
+    Logic["Prompt Engineering\n& Business Logic"]
     Whisper[Whisper / Server STT]
   end
 
@@ -88,6 +88,7 @@ graph TD
   UI -->|update map| Map
   UI -->|speak result| TTS
   TTS --> User
+
 
 🛠️ Tech Stack (技術スタック)
 Frontend: HTML5, CSS3 (CSS Variables, Flexbox, Glassmorphism), Vanilla JavaScript (ES6+).
