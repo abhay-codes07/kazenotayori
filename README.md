@@ -1,7 +1,7 @@
 <div align="center">
 
 # 🍃 KazeNoTayori | 風の便り  
-### **AI-Powered Weather & Fashion Advisor (AI 天気・ファッションアドバイザー)**  
+### **AI-Powered Weather Outing & Fashion Advisor (AI 天気・ファッションアドバイザー)**  
 **"Bringing the wisdom of the wind to your daily choices."**  
 **「風が運ぶ情報で、あなたの日常を彩る。」**
 
