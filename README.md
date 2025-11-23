@@ -88,6 +88,7 @@ graph TD
   UI -->|update map| Map
   UI -->|speak result| TTS
   TTS --> User
+```
 
 ## 🛠️ Tech Stack (技術スタック)
 
